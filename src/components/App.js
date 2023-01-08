@@ -36,7 +36,7 @@ const App = () => {
             <label htmlFor='consent'>Consent:</label>
             <input type='checkbox' id='consent' onChange={()=>{setConsent(!consent)}} value={consent}/><br />
 
-            <button type='submit' disabled={consent==false}>Signup</button>
+            <button type='submit' >Signup</button>
         </form>
     </>
   )
