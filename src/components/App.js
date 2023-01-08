@@ -14,24 +14,26 @@ const App = () => {
       console.log(key, value);
       data[key] = value;
     }
-    setError(signUpFormValidation(data));
-  
-}
+    const a = signUpFormValidation(data);
+    console.log(a);
+    setError(a)
+    return;
+  }
   return (
     <>
         <h1>Sign Up Form</h1>
         <form onSubmit={validateForm}>
             <label htmlFor='name'>Name: </label>
             <input type="text" id='name' name='name' placeholder='Name' /><br />
-            {error.name} <br />
+            {error && error.name} <br />
 
             <label htmlFor='email'>Email: </label>
             <input type='text' id='email' name='email' placeholder='Email' /><br />
-            {error.email} <br />
+            {error && error.email} <br />
 
             <label htmlFor='password'>Password: </label>
             <input type="password" id='password' name='password' placeholder='Password' /><br />
-            {error.password} <br />
+            {error && error.password} <br />
 
             <label htmlFor='consent'>Consent:</label>
             <input type='checkbox' id='consent' onChange={()=>{setConsent(!consent)}} value={consent}/><br />
